@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.MainScreenController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
+         <children>
+            <SplitPane dividerPositions="0.15" layoutX="139.0" layoutY="142.0" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="750.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Label fx:id="mainHeader" layoutX="45.0" layoutY="32.0" text="Inventory Management System" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="45.0">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="642.0" prefWidth="998.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" layoutX="112.0" layoutY="25.0" orientation="VERTICAL" prefHeight="595.0" prefWidth="998.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane prefHeight="534.0" prefWidth="996.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.5" layoutX="201.0" layoutY="76.0" prefHeight="442.0" prefWidth="996.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane fx:id="partsPanel" prefHeight="532.0" prefWidth="494.0">
+                                             <children>
+                                                <TableView fx:id="mainPartTable" layoutX="17.0" layoutY="91.0" prefHeight="368.0" prefWidth="460.0" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="91.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="mainPartIDColumn" prefWidth="68.0" text="Part ID" />
+                                                    <TableColumn fx:id="mainPartNameColumn" prefWidth="178.0" text="Part Name" />
+                                                      <TableColumn fx:id="mainPartInvLevelColumn" prefWidth="97.0" text="Inventory Level" />
+                                                      <TableColumn fx:id="mainPartCostColumn" prefWidth="116.0" text="Price/Cost per Unit" />
+                                                  </columns>
+                                                </TableView>
+                                                <Label layoutX="34.0" layoutY="30.0" text="Parts">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="mainPartIDSearchField" layoutX="142.0" layoutY="21.0" prefHeight="52.0" prefWidth="237.0">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Button fx:id="mainPartSearchButton" layoutX="400.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleSearchPart" prefHeight="45.0" prefWidth="74.0" text="SEARCH" />
+                                                <Button fx:id="mainPartDeleteButton" layoutX="425.0" layoutY="468.0" mnemonicParsing="false" onAction="#handleDeletePart" prefHeight="54.0" prefWidth="52.0" text="Delete" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="425.0">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="mainPartModifyButton" layoutX="360.0" layoutY="468.0" mnemonicParsing="false" onAction="#handleModifyPart" prefHeight="54.0" prefWidth="52.0" text="Modify" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="360.0">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="mainPartAddButton" layoutX="295.0" layoutY="468.0" mnemonicParsing="false" onAction="#handleAddPart" prefHeight="54.0" prefWidth="52.0" text="Add" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="295.0">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane fx:id="productsPanel" prefHeight="532.0" prefWidth="494.0">
+                                             <children>
+                                                <Label layoutX="34.0" layoutY="30.0" text="Products">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="mainProductIDSearchField" layoutX="142.0" layoutY="21.0" prefHeight="52.0" prefWidth="237.0">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Button fx:id="mainProductSearchButton" layoutX="400.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleSearchProduct" prefHeight="45.0" prefWidth="74.0" text="SEARCH" />
+                                                <TableView fx:id="mainProductTable" layoutX="17.0" layoutY="91.0" prefHeight="368.0" prefWidth="460.0" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="91.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="mainProductIDColumn" prefWidth="68.0" text="Product ID" />
+                                                      <TableColumn fx:id="mainProductNameColumn" prefWidth="178.0" text="Product Name" />
+                                                      <TableColumn fx:id="mainProductInvLevelColumn" prefWidth="97.0" text="Inventory Level" />
+                                                      <TableColumn fx:id="mainProductPriceColumn" prefWidth="116.0" text="Price per Unit" />
+                                                   </columns>
+                                                </TableView>
+                                                <Button fx:id="mainProductAddButton" layoutX="295.0" layoutY="468.0" mnemonicParsing="false" onAction="#handleAddProduct" prefHeight="54.0" prefWidth="52.0" text="Add" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="295.0">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="mainProductModifyButton" layoutX="360.0" layoutY="468.0" mnemonicParsing="false" onAction="#handleModifyProduct" prefHeight="54.0" prefWidth="52.0" text="Modify" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="360.0">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="mainProductDeleteButton" layoutX="425.0" layoutY="468.0" mnemonicParsing="false" onAction="#handleDeleteProduct" prefHeight="54.0" prefWidth="52.0" text="Delete" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="425.0">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane fx:id="mainBottom" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Button fx:id="mainExitButton" layoutX="34.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleExitMain" prefHeight="45.0" prefWidth="74.0" text="EXIT" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
